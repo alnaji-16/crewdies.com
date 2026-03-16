@@ -701,14 +701,17 @@
         gap: 20px;
     }
 
-    #atelier .gallery-grid .gallery-item img {
+  #atelier .gallery-grid .gallery-item img {
         width: 100%;
-        /* Force a 4:5 Portrait Ratio: The gold standard for high-end apparel */
-        aspect-ratio: 4 / 5; 
-        /* Scale and center the image to fill the box without stretching */
-        object-fit: cover; 
+        /* Square ratio (1:1) is the best 'all-rounder' for different photo shapes */
+        aspect-ratio: 1 / 1; 
+        /* 'contain' ensures the WHOLE photo is visible without any cropping */
+        object-fit: contain; 
+        /* This adds a very subtle 'gallery frame' background for images that don't fill the square */
+        background-color: #fdfdfd; 
         display: block;
         transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        padding: 10px; /* Gives the technical designs a little breathing room */
     }
 
     #atelier .gallery-grid .gallery-item:hover img {

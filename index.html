@@ -692,5 +692,36 @@
     closeBtn.addEventListener('click', () => mMenu.classList.remove('open'));
     mLinks.forEach(link => link.addEventListener('click', () => mMenu.classList.remove('open')));
 </script>
+  <style>
+    /* PREMIER PORTFOLIO GRID REFINEMENT */
+    #atelier .gallery-grid {
+        display: grid;
+        /* Shows all 4 items in one elegant row on computers */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 20px;
+    }
+
+    #atelier .gallery-grid .gallery-item img {
+        width: 100%;
+        /* Force a 4:5 Portrait Ratio: The gold standard for high-end apparel */
+        aspect-ratio: 4 / 5; 
+        /* Scale and center the image to fill the box without stretching */
+        object-fit: cover; 
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    #atelier .gallery-grid .gallery-item:hover img {
+        transform: scale(1.05); /* Subtle interactive zoom */
+    }
+
+    /* Mobile Responsive: 2 items per row so they remain clear on phones */
+    @media (max-width: 768px) {
+        #atelier .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+    }
+</style>
 </body>
 </html>
